@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Передвинуть задачу на один день</title>
+  <style>
+
+.body_button_moveoneday {
+    font-family: Arial, sans-serif;
+}
+
+.form_button_moveoneday {
+    margin-bottom: 15px;
+}
+
+.input_moveoneday[type="submit"] {
+    padding: 5px 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input_moveoneday[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.button_js {
+    padding: 5px 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+</style>
+</head>
+<body class="body_button_moveoneday">
+  <button class="button_js" id="myButton" onclick="myFunction()" value="{{ local_task_id }}">Кнопка для js</button>
+  <form class="form_button_moveoneday" action="{% url 'move_one_hour' %}" method="post">
+    {% csrf_token %}
+    <input class="input_moveoneday" type="submit" value="Передвинуть задачу на один час">
+  </form>
+  <form class="form_button_moveoneday" action="{% url 'move_one_day' %}" method="post">
+    {% csrf_token %}
+    <input class="input_moveoneday" type="submit" value="Передвинуть задачу на один день">
+  </form>
+  <form class="form_button_moveoneday" action="{% url 'move_one_week' %}" method="post">
+    {% csrf_token %}
+    <input class="input_moveoneday" type="submit" value="Передвинуть задачу на одну неделю">
+  </form>
+<script src="//api.bitrix24.com/api/v1/"></script>
+<script type="module">
+import dayjs from 'https://cdn.jsdelivr.net/npm/dayjs@1.11.9/+esm'
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.7/dayjs.min.js"></script>
+<script src="/static/js/script.js"></script>
+</body>
+
+</html>
