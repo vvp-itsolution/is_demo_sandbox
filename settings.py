@@ -57,7 +57,8 @@ INSTALLED_APPS = [
     'ones_fresh_unf_with_b24',
     'crmfields',
     'move_one_day_server',
-    'selectuser'
+    'selectuser',
+    'company_on_maps',
 ]
 
 MIDDLEWARE = [
@@ -163,7 +164,7 @@ ilogger = MuteLogger()
 
 # local settings
 try:
-    from _local_settings import *
+    from local_settings import *
 except ImportError:
     from warnings import warn
 

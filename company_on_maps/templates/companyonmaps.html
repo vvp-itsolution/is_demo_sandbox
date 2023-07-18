@@ -1,0 +1,16 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Приложение: "Просмотр компаний на карте"</title>
+    <link rel="stylesheet" href="{% static 'css/selectuser.css' %}">
+</head>
+<body>
+  <div class="header">
+    <h1>Приложение: "Просмотр компаний на карте"</h1>
+    <button onclick="document.location='{% url 'reload_start'%}'">Назад</button>
+  </div>
+</body>
+</html>
